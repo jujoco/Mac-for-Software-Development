@@ -38,6 +38,18 @@ A curated list of the apps and CLI tools I install to get up and running fast on
 
 ---
 
+## Global npm Packages
+
+```sh
+npm install -g @playwright/cli @vscode/vsce pnpm
+```
+
+- `pnpm` - fast, disk-efficient package manager
+- `@playwright/cli` - browser automation and testing CLI
+- `@vscode/vsce` - VS Code extension packaging and publishing tool
+
+---
+
 ## Config Files
 
 This repo also bundles the dotfiles and app configs I carry between machines:
