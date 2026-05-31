@@ -18,18 +18,17 @@ Enjoy :)
 ---
 
 ## CLI Applications
-- [Homebrew](https://brew.sh/)
-- [OhMyZsh](https://ohmyz.sh/)
 - [Claude Code](https://claude.com/product/claude-code)
+- [Homebrew](https://brew.sh/)
 
   > Note: after every homebrew install, carefully follow the logged instructions
 
-  - `brew install nvm`
+  - `brew install fnm` - fast node manager
   - `brew install go`
-  - `brew install fzf`
-  - `brew install zoxide`
-  - `brew install atuin`
-  - `brew install fd`
+  - `brew install fzf - fuzzy find`
+  - `brew install zoxide` - better cli cd
+  - `brew install atuin` - better cli history
+  - `brew install fd` - better cli find
   - `brew install ripgrep`
   - `brew install jq`
   - `brew install git-lfs`
