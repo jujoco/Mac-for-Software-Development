@@ -38,7 +38,3 @@ alias r=". ranger"
 alias ls="ls -G"
 alias lst="tree -LC 1 --gitignore"
 alias lsta="tree -LC 1 -a --gitignore"
-
-
-# Node GitHub Autocommit
-alias committer="node ~/localRepos/my-projects/node-github-autocommit/index.js"
