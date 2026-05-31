@@ -42,9 +42,11 @@ A curated list of the apps and CLI tools I install to get up and running fast on
 
 This repo also bundles the dotfiles and app configs I carry between machines:
 
-- `zsh/.zshenv` • Environment variables loaded for all shells (editor, `PATH`, FNM, pnpm).
-- `zsh/.zshrc` • Interactive shell config (Oh My Zsh, plugins, aliases).
-- `karabiner/karabier.json` • [Karabiner Elements](https://karabiner-elements.pqrs.org/) key-remapping rules.
+- `zsh/.zshenv` • Loaded for every zsh invocation; sources secrets and sets locale, themes, and the `bat` man pager.
+- `zsh/.zprofile` • Login-shell setup run once per window; initializes Homebrew, fzf, and `PATH` for child shells to inherit.
+- `zsh/.zshrc` • Interactive shell config (Powerlevel10k, completions, history, fzf, atuin, zoxide, fnm).
+- `zsh/aliases.zsh` • Shell aliases
+- `karabiner/karabiner.json` • [Karabiner Elements](https://karabiner-elements.pqrs.org/) key-remapping rules.
 - `RectangleConfig.json` • [Rectangle](https://rectangleapp.com/) window-management settings (import from Rectangle → Settings).
 
 ---
