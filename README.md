@@ -38,6 +38,17 @@ A curated list of the apps and CLI tools I install to get up and running fast on
 
 ---
 
+## Config Files
+
+This repo also bundles the dotfiles and app configs I carry between machines:
+
+- `zsh/.zshenv` • Environment variables loaded for all shells (editor, `PATH`, FNM, pnpm).
+- `zsh/.zshrc` • Interactive shell config (Oh My Zsh, plugins, aliases).
+- `karabiner/karabier.json` • [Karabiner Elements](https://karabiner-elements.pqrs.org/) key-remapping rules.
+- `RectangleConfig.json` • [Rectangle](https://rectangleapp.com/) window-management settings (import from Rectangle → Settings).
+
+---
+
 ## Collaboration tools
 
 - [Slack](https://slack.com/)
