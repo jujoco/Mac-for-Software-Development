@@ -1,6 +1,6 @@
-# Mac-for-Software-Development
+# Mac Dev Setup
 
-Enjoy :)
+A curated list of the apps and CLI tools I install to get up and running fast on a new Mac.
 
 ## Desktop Applications
 
@@ -11,7 +11,7 @@ Enjoy :)
 - [Bruno](https://www.usebruno.com/) • Best API testing App
 - [Obsidian](https://obsidian.md/download) • Best Note taking App
 - [Rectangle](https://rectangleapp.com/) • Best Window Manager
-- [karabiner Elements](https://karabiner-elements.pqrs.org/) • Best App Manager
+- [Karabiner Elements](https://karabiner-elements.pqrs.org/) • Best App Manager
 - [Super Whisper](https://superwhisper.com/) • Best Voice Dictation
 - [Google Chrome](https://www.google.com/chrome/) • Browser
 
@@ -24,17 +24,17 @@ Enjoy :)
   > Note: after every homebrew install, carefully follow the logged instructions
 
   - `brew install fnm` - fast node manager
-  - `brew install go`
-  - `brew install fzf - fuzzy find`
+  - `brew install go` - Go programming language
+  - `brew install fzf` - fuzzy finder
   - `brew install zoxide` - better cli cd
   - `brew install atuin` - better cli history
   - `brew install fd` - better cli find
-  - `brew install ripgrep`
-  - `brew install jq`
-  - `brew install git-lfs`
-  - `brew install lazygit`
-  - `brew install tree`
-  - `brew install ffmpeg`
+  - `brew install ripgrep` - better cli grep
+  - `brew install jq` - command-line JSON processor
+  - `brew install git-lfs` - Git extension for large files
+  - `brew install lazygit` - terminal UI for git
+  - `brew install tree` - directory tree viewer
+  - `brew install ffmpeg` - audio/video converter
 
 ---
 
