@@ -1,6 +1,8 @@
 # Mac Dev Setup
 
-A curated list of the apps and CLI tools I install to get up and running fast on a new Mac.
+A curated list of the apps, CLI tools, & mac settings I use to get up and running fast on a new Mac.
+
+---
 
 ## Desktop Applications
 
@@ -17,6 +19,25 @@ A curated list of the apps and CLI tools I install to get up and running fast on
 
 ---
 
+## Keyboard Settings
+
+[Text Cursor Key-Repeat Tester](https://mac-key-repeat.zaymon.dev/): best butter smooth setting
+
+enter in terminal & restart computer
+```sh
+defaults write -g InitialKeyRepeat -int 12
+```
+
+Settings > Keyboard > Keyboard Shortcuts... > App Shortcuts >
+
+- All Applications
+  - disable Minimize
+- Google Chrome, VSCode, iTerm, etc.
+  - disable Hide
+
+---
+
+
 ## CLI Applications
 - [Claude Code](https://claude.com/product/claude-code)
 - [Homebrew](https://brew.sh/)
@@ -24,7 +45,8 @@ A curated list of the apps and CLI tools I install to get up and running fast on
   > Note: after every homebrew install, carefully follow the logged instructions
 
   - `brew install fnm` - fast node manager
-  - `brew install go` - Go programming language
+  - `brew install uv` - python manager
+  - `brew install rust` - rust bin
   - `brew install fzf` - fuzzy finder
   - `brew install zoxide` - better cli cd
   - `brew install atuin` - better cli history
@@ -35,6 +57,7 @@ A curated list of the apps and CLI tools I install to get up and running fast on
   - `brew install lazygit` - terminal UI for git
   - `brew install tree` - directory tree viewer
   - `brew install ffmpeg` - audio/video converter
+  - `brew install notunes` - disable apply music button
 
 ---
 
