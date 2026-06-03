@@ -25,6 +25,7 @@ A curated list of the apps, CLI tools, & mac settings I use to get up and runnin
 
 enter in terminal & restart computer
 ```sh
+defaults write -g KeyRepeat -int 1
 defaults write -g InitialKeyRepeat -int 12
 ```
 
