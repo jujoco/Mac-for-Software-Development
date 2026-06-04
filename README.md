@@ -38,8 +38,8 @@ Settings > Keyboard > Keyboard Shortcuts... > App Shortcuts >
 
 ---
 
-
 ## CLI Applications
+
 - [Claude Code](https://claude.com/product/claude-code)
 - [Homebrew](https://brew.sh/)
 

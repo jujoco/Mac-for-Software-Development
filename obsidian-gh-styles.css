@@ -1,0 +1,58 @@
+/* ============================================================
+   GitHub-style Markdown for Obsidian
+   Save as: <vault>/.obsidian/snippets/obsidian-gh-styles.css
+   Enable in: Settings -> Appearance -> CSS snippets
+   Works on top of the Default theme (and most others).
+   ============================================================ */
+
+body {
+  /* --- Fonts: GitHub's native system stack --- */
+  --font-text:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+    Helvetica, Arial, sans-serif;
+  --font-monospace:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+
+  /* --- Heading scale (the part flat themes drop) --- */
+  /* --h1-size: 1.6rem; */
+  /* --h2-size: 1.5em;  */
+  /* --h3-size: 1.25em; */
+  /* --h4-size: 1em;   */
+  /* --h5-size: 0.875em; */
+  /* --h6-size: 0.85em; */
+
+  /* --- Horizontal rule (the `---` thematic break) --- */
+  --hr-thickness: 4px;
+
+  /* --- top padding above headers --- */
+  --p-spacing: 0.25rem;
+
+  --code-background: #444444;
+  --background-primary: #15151d;
+}
+
+/* Tight heading line-height, both editing (Live Preview) and reading modes */
+.markdown-rendered h1, .markdown-rendered h2, .markdown-rendered h3,
+.markdown-rendered h4, .markdown-rendered h5, .markdown-rendered h6,
+.cm-s-obsidian .HyperMD-header {
+  line-height: 1.5;
+}
+
+/* GitHub's signature underline under H1 and H2 */
+.markdown-rendered h1,
+.markdown-rendered h2 {
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+/* Same underline + tighter top spacing in Live Preview (editing) */
+.cm-s-obsidian .HyperMD-header-1,
+.cm-s-obsidian .HyperMD-header-2 {
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+/* Inline code and code blocks at GitHub's 85% size */
+.markdown-rendered code,
+.cm-s-obsidian .cm-inline-code {
+  font-size: 80%;
+}
