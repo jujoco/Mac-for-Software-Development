@@ -47,6 +47,7 @@ Settings > Keyboard > Keyboard Shortcuts... > App Shortcuts >
 
   - `brew install fnm` - fast node manager
   - `brew install uv` - python manager
+  - `brew install gh` - github cli
   - `brew install rust` - rust bin
   - `brew install fzf` - fuzzy finder
   - `brew install zoxide` - better cli cd
