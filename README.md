@@ -59,6 +59,7 @@ Settings > Keyboard > Keyboard Shortcuts... > App Shortcuts >
   - `brew install lazygit` - terminal UI for git
   - `brew install tree` - directory tree viewer
   - `brew install ffmpeg` - audio/video converter
+  - `brew install zsh-syntax-highlighting` - better cli awareness
   - `brew install notunes` - disable apply music button
 
 ---
