@@ -1,0 +1,27 @@
+name: Feature
+description: A new feature or enhancement
+title: "feat: "
+labels: ["feature", "backlog"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What needs to be built and why?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Definition of done — what must be true for this to be closed?
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Additional context, links, or design decisions (optional)

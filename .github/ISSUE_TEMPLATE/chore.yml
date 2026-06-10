@@ -1,0 +1,26 @@
+name: Chore
+description: Maintenance task — docs, dependencies, tooling, cleanup
+title: "chore: "
+labels: ["chore", "backlog"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What maintenance work needs to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Tasks
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Additional context (optional)
