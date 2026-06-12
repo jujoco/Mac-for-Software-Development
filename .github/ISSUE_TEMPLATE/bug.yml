@@ -7,9 +7,18 @@ body:
     id: summary
     attributes:
       label: Summary
-      description: What is broken?
+      description: What is broken? (optional - screenshots, logs, or context)
     validations:
       required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected vs Actual Behavior
+      value: |
+        ## Expected
+        -
+        ## Actual
+        -
   - type: textarea
     id: steps
     attributes:
@@ -17,22 +26,3 @@ body:
       value: |
         1.
         2.
-        3.
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected Behavior
-  - type: textarea
-    id: actual
-    attributes:
-      label: Actual Behavior
-  - type: textarea
-    id: environment
-    attributes:
-      label: Environment
-      description: macOS version, shell version, relevant tool versions
-  - type: textarea
-    id: notes
-    attributes:
-      label: Notes
-      description: Screenshots, logs, or additional context (optional)
