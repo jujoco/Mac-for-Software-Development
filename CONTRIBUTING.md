@@ -68,13 +68,17 @@ Move the issue to **In Progress** when you open the branch.
 
 ### 3. Commit conventions
 
-Follow [Conventional Commits](https://www.conventionalcommits.org/):
+Follow [Conventional Commits](https://www.conventionalcommits.org/) with the issue number as the scope:
 
 ```
-feat: add zsh alias for docker compose
-fix: resolve zshrc load order issue
-chore: update brew dependencies list
+<type>(<issueNumber>): <short summary>
+
+feat(#12): add zsh alias for docker compose
+fix(#15): resolve zshrc load order issue
+chore(#3): update brew dependencies list
 ```
+
+The scope makes every commit on the branch traceable to its issue. Since all commits are squashed on merge, the squash commit inherits this pattern — giving you one line in `staging` history that maps directly to one issue.
 
 `fix:` is the Conventional Commits type for bug fixes. The issue template is named `bug` to describe the *problem*; the commit prefix is `fix:` to describe the *action*.
 
