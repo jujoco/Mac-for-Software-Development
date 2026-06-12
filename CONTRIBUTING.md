@@ -21,13 +21,7 @@ GitFlow introduces a permanent `develop` branch and multiple long-lived branches
 
 Before writing any code, create an issue using one of the templates. Every branch must trace back to an issue.
 
-Sprint stages are tracked with labels:
-
-| Label | Meaning |
-|---|---|
-| `backlog` | Created, not yet started |
-| `in-progress` | Actively being worked on |
-| `done` | Merged and closed |
+Sprint state is managed by the **GitHub Project kanban board** (Backlog → In Progress → In Review → Done). Labels on issues reflect issue *type* only, not state.
 
 ### 2. Branch off main
 
@@ -42,7 +36,6 @@ Branch naming conventions:
 | Type | Example |
 |---|---|
 | `feature/` | `feature/12-add-zsh-aliases` |
-| `fix/` | `fix/7-correct-karabiner-key-mapping` |
 | `chore/` | `chore/3-update-readme` |
 | `bug/` | `bug/15-zshrc-not-sourcing-aliases` |
 
@@ -54,25 +47,26 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 <type>: <short summary>
 
 feat: add zsh alias for docker compose
-fix: correct rectangle snap zone config
+fix: resolve zshrc load order issue
 chore: update brew dependencies list
-bug: resolve zshrc load order issue
 ```
+
+`fix:` is the Conventional Commits type for bug fixes. The issue template is named `bug` to describe the *problem*; the commit prefix is `fix:` to describe the *action*.
 
 Reference the issue number in the PR description, not in every commit.
 
 ### 4. Open a pull request
 
 - Target branch: `main`
-- Title should match your commit convention (`feat:`, `fix:`, etc.)
-- Move the linked issue label from `backlog` → `in-progress` when you open the PR
+- Title should match your commit convention (`feat:`, `fix:`, `chore:`)
+- Move the issue to `In Progress` on the kanban board when you open the PR
 - At least one approval before merging (for shared repos)
 
 ### 5. Merge and close
 
 - Squash or merge commit — keep `main` history readable
-- Move the issue label to `done` and close it when the PR merges
-- Delete the feature branch after merge
+- Move the issue to `Done` on the kanban board and close it when the PR merges
+- Delete the feature branch after merge (auto-deleted if repo setting is enabled)
 
 ---
 
