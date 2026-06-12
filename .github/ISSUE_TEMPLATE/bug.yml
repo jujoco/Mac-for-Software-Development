@@ -1,7 +1,7 @@
 name: Bug
 description: Something is broken or behaving unexpectedly
 title: "bug: "
-labels: ["bug", "backlog"]
+labels: ["bug"]
 body:
   - type: textarea
     id: summary

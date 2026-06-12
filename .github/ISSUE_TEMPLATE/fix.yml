@@ -1,7 +1,7 @@
 name: Fix
 description: A non-bug improvement — refactor, config tweak, or small correction
 title: "fix: "
-labels: ["fix", "backlog"]
+labels: ["fix"]
 body:
   - type: textarea
     id: summary
