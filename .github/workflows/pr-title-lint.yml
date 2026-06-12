@@ -1,0 +1,33 @@
+name: PR Title Lint
+
+# The PR title becomes the squash-merge commit subject (GitHub appends " (#<pr>)").
+# This gate fails the PR if the title doesn't follow:  type(issue): summary
+# e.g. feat(30): add zsh docker alias  ->  feat(30): add zsh docker alias (#31)
+# See CONTRIBUTING.md for the full convention.
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  lint-title:
+    name: Validate PR title
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check title format
+        env:
+          # Passed via env (not inlined) to avoid shell injection from the title.
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          echo "PR title: $PR_TITLE"
+          if printf '%s' "$PR_TITLE" | grep -qE '^(feat|fix|chore)\([0-9]+\): .+'; then
+            echo "✓ Title follows the convention: type(issue): summary"
+          else
+            echo "::error::Invalid PR title: '$PR_TITLE'"
+            echo "::error::Use 'type(issue): summary' — e.g. feat(30): add zsh docker alias"
+            echo "Allowed types: feat, fix, chore. Scope must be the plain issue number (no '#')."
+            exit 1
+          fi
