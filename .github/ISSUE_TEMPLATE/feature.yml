@@ -6,20 +6,14 @@ body:
   - type: textarea
     id: summary
     attributes:
-      label: Summary
+      label: Details
       description: What needs to be built and why?
+      value: |
+        ## Problem
+        -
+        ## Acceptance Criteria (User Story)
+        -
+        ## Notes (optional)
+        -
     validations:
       required: true
-  - type: textarea
-    id: acceptance-criteria
-    attributes:
-      label: Acceptance Criteria
-      description: Definition of done — what must be true for this to be closed?
-      value: |
-        -
-        -
-  - type: textarea
-    id: notes
-    attributes:
-      label: Notes
-      description: Additional context, links, or design decisions (optional)

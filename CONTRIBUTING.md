@@ -69,8 +69,11 @@ Commit freely on your branch — all commits are squashed on merge.
 
 - Target branch: `staging`
 - Title must follow commit convention (`feat:`, `fix:`, `chore:`) — the issue number lives here, in the scope
-- Body lists the work that was done in bullet points (no issue number needed)
+- Body lists the work that was done in bullet points
+- If the work has an issue, add `Closes #<issue-number>` so GitHub auto-closes it on merge
 - Move the issue to **In Review** when the PR is open
+
+The repo's [PR template](.github/pull_request_template.md) pre-fills this layout — just fill it in.
 
 example:
 
@@ -79,6 +82,8 @@ example:
 - added X for Y
 - updated B dependencies list
 - etc.
+
+Closes #12
 ```
 
 ### 5. Squash and merge into staging

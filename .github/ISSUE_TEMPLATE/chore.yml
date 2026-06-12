@@ -10,15 +10,3 @@ body:
       description: What maintenance work needs to happen?
     validations:
       required: true
-  - type: textarea
-    id: tasks
-    attributes:
-      label: Tasks
-      value: |
-        -
-        -
-  - type: textarea
-    id: notes
-    attributes:
-      label: Notes
-      description: Additional context (optional)
