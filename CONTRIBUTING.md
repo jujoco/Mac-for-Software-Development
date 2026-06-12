@@ -1,19 +1,6 @@
 # Contributing
 
-This project follows **GitLab Flow** with two long-lived branches — a pragmatic middle ground between GitHub Flow (too simple) and GitFlow (too complex).
-
----
-
-## Branch model
-
-| Branch | Role | Default |
-|---|---|---|
-| `staging` | Integration branch — all work lands here first | yes |
-| `main` | Production — promoted from `staging` manually | no |
-
-`staging` is the GitHub default branch. All feature branches are cut from `staging` and merged back into it. Promotions from `staging` → `main` are done manually when the work is ready to ship.
-
-Never commit directly to `staging` or `main`.
+This project follows **GitLab Flow** with two long-lived branches - staging (default) & main.
 
 ---
 
@@ -24,7 +11,7 @@ State is managed by the **GitHub Project kanban board**. Labels on issues reflec
 | Column | Meaning |
 |---|---|
 | **Backlog** | All open issues — the full inventory |
-| **Up Next** | Prioritised and approved to be picked up |
+| **Ready** | Prioritized and approved to be picked up |
 | **In Progress** | Actively being worked on |
 | **In Review** | PR is open, awaiting review or merge |
 | **Done** | Merged and closed |
@@ -35,15 +22,27 @@ State is managed by the **GitHub Project kanban board**. Labels on issues reflec
 
 ### 1. Issue first
 
-Create an issue using one of the templates before writing any code. Every branch traces back to an issue. Move the issue to **Up Next** before starting work.
+Create an issue using one of the templates before writing any code. Every branch traces back to an issue. Move the issue to **Ready** before starting work.
 
 ### 2. Branch off staging
 
 ```
 git checkout staging
 git pull origin staging
-git checkout -b <your-branch-name>
+git checkout -b <type>/<issueNumber>-<short-slug>
 ```
+
+Branch name convention: `<type>/<issueNumber>-<short-slug>`
+
+```
+feat/12-zsh-docker-alias
+fix/15-zshrc-load-order
+chore/3-update-brew-deps
+```
+
+- `<type>` matches the Conventional Commits type (`feat`, `fix`, `chore`)
+- `<issueNumber>` is the plain issue number — every branch traces back to one issue
+- `<short-slug>` is a few kebab-case words describing the work
 
 Move the issue to **In Progress** when you open the branch.
 
@@ -54,42 +53,22 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/) with the iss
 ```
 <type>(<issueNumber>): <short summary>
 
-feat(#12): add zsh alias for docker compose
-fix(#15): resolve zshrc load order issue
-chore(#3): update brew dependencies list
+feat(12): add zsh alias for docker compose
+fix(15): resolve zshrc load order issue
+chore(3): update brew dependencies list
 ```
 
-The scope makes every commit on the branch traceable to its issue. Since all commits are squashed on merge, the squash commit inherits this pattern — giving you one line in `staging` history that maps directly to one issue.
-
-`fix:` is the Conventional Commits type for bug fixes. The issue template is named `bug` to describe the *problem*; the commit prefix is `fix:` to describe the *action*.
-
-Commit freely on your branch — all commits are squashed on merge.
+Types: `feat`, `fix`, `chore`. Use the plain issue number, no `#`. Keep your branch to **one commit** — squash before you push.
 
 ### 4. Open a pull request
 
 - Target branch: `staging`
-- Title must follow commit convention (`feat:`, `fix:`, `chore:`) — the issue number lives here, in the scope
-- Body lists the work that was done in bullet points
-- If the work has an issue, add `Closes #<issue-number>` so GitHub auto-closes it on merge
+- Add `Closes #<issue-number>` so the issue auto-closes on merge
 - Move the issue to **In Review** when the PR is open
 
-The repo's [PR template](.github/pull_request_template.md) pre-fills this layout — just fill it in.
+### 5. Merging into staging
 
-example:
-
-```
-## Summary
-- added X for Y
-- updated B dependencies list
-- etc.
-
-Closes #12
-```
-
-### 5. Squash and merge into staging
-
-- **Squash and merge only** — one commit per issue on `staging`
-- The squash commit message is the scoped prefix plus the commit summary: `feat(#12): add zsh aliases`
-- This keeps `staging` history linear: one line per issue, fully traceable
-- Branch is auto-deleted after merge
-- Move the issue to **Done**
+- Reviewed and merged by a lead Dev — never the same developer who pushed the commit/PR
+- Squash and merge only
+- Branch is auto-deleted after merge (enabled in repo settings)
+- The issue moves to **Closed** automatically on merge via the `Closes #<issue-number>` keyword
