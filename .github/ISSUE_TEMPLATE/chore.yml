@@ -1,7 +1,7 @@
 name: Chore
 description: Maintenance task — docs, dependencies, tooling, cleanup
 title: "chore: "
-labels: ["chore", "backlog"]
+labels: ["chore"]
 body:
   - type: textarea
     id: summary

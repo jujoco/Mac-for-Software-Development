@@ -1,7 +1,7 @@
 name: Feature
 description: A new feature or enhancement
 title: "feat: "
-labels: ["feature", "backlog"]
+labels: ["feature"]
 body:
   - type: textarea
     id: summary
