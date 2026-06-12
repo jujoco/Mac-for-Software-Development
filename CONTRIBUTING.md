@@ -17,17 +17,6 @@ Never commit directly to `staging` or `main`.
 
 ---
 
-## Why GitLab Flow, not GitFlow
-
-GitFlow introduces a permanent `develop` branch and multiple long-lived branches (`release/*`, `hotfix/*`) that add overhead without much benefit for most projects. GitLab Flow instead:
-
-- Uses `staging` as the integration branch and `main` as production
-- Creates short-lived branches per issue
-- Promotes upstream: `staging` → `main` when ready
-- No separate hotfix branches — urgent fixes follow the same PR process, just expedited
-
----
-
 ## Sprint board
 
 State is managed by the **GitHub Project kanban board**. Labels on issues reflect *type* only, never state.
@@ -53,16 +42,8 @@ Create an issue using one of the templates before writing any code. Every branch
 ```
 git checkout staging
 git pull origin staging
-git checkout -b <type>/<issue-number>-short-description
+git checkout -b <your-branch-name>
 ```
-
-Branch naming conventions:
-
-| Type | Example |
-|---|---|
-| `feature/` | `feature/12-add-zsh-aliases` |
-| `chore/` | `chore/3-update-readme` |
-| `bug/` | `bug/15-zshrc-not-sourcing-aliases` |
 
 Move the issue to **In Progress** when you open the branch.
 
@@ -87,31 +68,23 @@ Commit freely on your branch — all commits are squashed on merge.
 ### 4. Open a pull request
 
 - Target branch: `staging`
-- Title must follow commit convention (`feat:`, `fix:`, `chore:`)
-- Body must include `Closes #<issue-number>` — this links the squash commit to the issue and auto-closes it on merge
+- Title must follow commit convention (`feat:`, `fix:`, `chore:`) — the issue number lives here, in the scope
+- Body lists the work that was done in bullet points (no issue number needed)
 - Move the issue to **In Review** when the PR is open
+
+example:
 
 ```
 ## Summary
-<what and why>
-
-Closes #12
+- added X for Y
+- updated B dependencies list
+- etc.
 ```
 
 ### 5. Squash and merge into staging
 
 - **Squash and merge only** — one commit per issue on `staging`
-- The squash commit message becomes: `feat: add zsh aliases (#PR) — Closes #12`
+- The squash commit message is the scoped prefix plus the commit summary: `feat(#12): add zsh aliases`
 - This keeps `staging` history linear: one line per issue, fully traceable
 - Branch is auto-deleted after merge
 - Move the issue to **Done**
-
-### 6. Promote staging → main
-
-When `staging` is stable and ready to ship, open a PR from `staging` → `main` manually. Use a standard merge commit (not squash) to preserve the full staging history on `main`.
-
-```
-git checkout staging
-git pull origin staging
-# open PR: staging → main via GitHub UI
-```
