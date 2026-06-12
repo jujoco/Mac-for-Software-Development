@@ -15,10 +15,8 @@ body:
     attributes:
       label: Acceptance Criteria
       value: |
-        - [ ]
-        - [ ]
-    validations:
-      required: true
+        -
+        -
   - type: textarea
     id: notes
     attributes:
